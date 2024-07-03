@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Fluid Slider CSS</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!-- put all in a wrapper:-->
+		<div class="wrap" role="group" aria-label="slider with ruler" style="--min: 0; --val: 18; --max: 36">
+			<!-- slider:-->
+			<input id="r" type="range" list="l" max="36" />
+			<!-- value display:-->
+			<output for="r"></output>
+			<!-- ruler:-->
+			<datalist id="l">
+				<option value="0" style="--idx: 0" label="0"></option>
+				<option value="1" style="--idx: 1"></option>
+				<option value="2" style="--idx: 2"></option>
+				<option value="3" style="--idx: 3"></option>
+				<option value="4" style="--idx: 4"></option>
+				<option value="5" style="--idx: 5"></option>
+				<option value="6" style="--idx: 6" label="6"></option>
+				<option value="7" style="--idx: 7"></option>
+				<option value="8" style="--idx: 8"></option>
+				<option value="9" style="--idx: 9"></option>
+				<option value="10" style="--idx: 10"></option>
+				<option value="11" style="--idx: 11"></option>
+				<option value="12" style="--idx: 12" label="12"></option>
+				<option value="13" style="--idx: 13"></option>
+				<option value="14" style="--idx: 14"></option>
+				<option value="15" style="--idx: 15"></option>
+				<option value="16" style="--idx: 16"></option>
+				<option value="17" style="--idx: 17"></option>
+				<option value="18" style="--idx: 18" label="18"></option>
+				<option value="19" style="--idx: 19"></option>
+				<option value="20" style="--idx: 20"></option>
+				<option value="21" style="--idx: 21"></option>
+				<option value="22" style="--idx: 22"></option>
+				<option value="23" style="--idx: 23"></option>
+				<option value="24" style="--idx: 24" label="24"></option>
+				<option value="25" style="--idx: 25"></option>
+				<option value="26" style="--idx: 26"></option>
+				<option value="27" style="--idx: 27"></option>
+				<option value="28" style="--idx: 28"></option>
+				<option value="29" style="--idx: 29"></option>
+				<option value="30" style="--idx: 30" label="30"></option>
+				<option value="31" style="--idx: 31"></option>
+				<option value="32" style="--idx: 32"></option>
+				<option value="33" style="--idx: 33"></option>
+				<option value="34" style="--idx: 34"></option>
+				<option value="35" style="--idx: 35"></option>
+				<option value="36" style="--idx: 36" label="36"></option>
+			</datalist>
+		</div>
+		<!-- support info boxes-->
+		<section>
+			<p class="box box--fail box--list">
+				Sorry, it appears your browser has failed displaying the slider ruler. Currently, recent versions of Firefox and
+				Chromium browsers should be able to display it.
+			</p>
+			<p class="box box--warn box--trig">
+				Sorry, it appears your browser does not support trigonometric functions in CSS, so the slider ruler offset won't
+				look ideal. Currently, trigonometric functions are supported in Safari, Firefox and Chromium browsers starting
+				with version 111 when enabling the <strong>Experimental Web Platform features</strong> flag in
+				<kbd>chrome://flags</kbd>.
+			</p>
+			<p class="box box--fail box--cmix">
+				Sorry, it appears your browser does not support <code>color-mix</code>. No support or this features prevents the
+				slider's highlight from responding to changes in value. Currently, <code>color-mix</code> is supported in Safari,
+				Chromium browsers starting with version 111 (version 109 when enabling the
+				<strong>Experimental Web Platform features</strong> flag in <kbd>chrome://flags</kbd>) and Firefox starting with
+				version 111 (version 88 when setting the <kbd>layout.css.color-mix.enabled</kbd> flag to <code>true</code> in
+				<kbd>about:config</kbd>).
+			</p>
+		</section>
+		<script src="js/script.js"></script>
+	</body>
+</html>

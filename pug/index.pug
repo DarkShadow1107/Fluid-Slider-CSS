@@ -1,0 +1,39 @@
+- let minor = 1, major = 6*minor, max = 6*major;
+- let s = min || 0;
+- let e = (max === 0 || max) ? max : 100;
+- let v = (val === 0 || val) ? val : .5*(s + e);
+
+// put all in a wrapper:
+.wrap(role='group' aria-label='slider with ruler' style=`--min: ${s}; --val: ${v}; --max: ${e}`)
+	// slider:
+	input#r(type='range' list='l' min=min value=val max=max)
+	// value display:
+	output(for='r')
+	// ruler:
+	datalist#l
+		- for(let i = 0; i <= e; i++)
+			option(value=i style=`--idx: ${i}` label=i%major ? null : i)
+
+// support info boxes
+section
+	p.box.box--fail.box--list Sorry, it appears your browser has failed displaying the slider ruler. Currently, recent versions of Firefox and Chromium browsers should be able to display it.
+	p.box.box--warn.box--trig Sorry, it appears your browser does not support trigonometric functions in CSS, so the slider ruler offset won't look ideal. Currently, trigonometric functions are supported in Safari, Firefox and Chromium browsers starting with version 111 when enabling the 
+		strong Experimental Web Platform features
+		|  flag in 
+		kbd chrome://flags
+		| .
+	p.box.box--fail.box--cmix Sorry, it appears your browser does not support 
+		code color-mix
+		| . No support or this features prevents the slider's highlight from responding to changes in value. Currently, 
+		code color-mix
+		|  is supported in Safari, Chromium browsers starting with version 111 (version 109 when enabling the 
+		strong Experimental Web Platform features
+		|  flag in 
+		kbd chrome://flags
+		| ) and Firefox starting with version 111 (version 88 when setting the 
+		kbd layout.css.color-mix.enabled
+		|  flag to 
+		code true
+		|  in 
+		kbd about:config
+		| ).
